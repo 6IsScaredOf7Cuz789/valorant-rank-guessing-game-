@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="jquery-3.7.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="styles.css">
-            <title>Total</title>
-    </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Total Score</title>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Total Score</h1>
+        <p id="totalScoreDisplay">Loading...</p>
+    </div>
+    <div class="btn-group">
+        <a href="index.html" class="btn btn-default" onclick="resetScore()">Restart!</a>
+        <a href="controle.html" class="btn btn-default">Controle</a>
+    </div>
 
-    <body>
-        <div class = "jumotron">
-            <h1>
-                Total
+    <script>
+        // Display the total score when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            const totalScore = localStorage.getItem("totalScore") || 0;
+            document.getElementById("totalScoreDisplay").textContent = `Your Total Score: ${totalScore}`;
+        });
 
-            </h1>
-        </div>
-        <div class="btn-group">
-            <a href="index.html" class="btn btn-default">Restart!</a>
-        </div>
-    </body>
-
+        // Reset score when restarting
+        function resetScore() {
+            localStorage.removeItem("totalScore");
+        }
+    </script>
+</body>
 </html>
