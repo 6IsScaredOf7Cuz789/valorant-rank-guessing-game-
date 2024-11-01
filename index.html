@@ -18,9 +18,17 @@
         </p>
         <div class="row">
             <div class="col-md-12">
-                <a href="Round1.html" class="btn btn-primary btn-lg btn-block">Start!</a>
+                <a href="Round1.html" class="btn btn-primary btn-lg btn-block" onclick="resetScore()">Start!</a>
             </div>
         </div>
     </div>
+
+    <script>
+        function resetScore() {
+            localStorage.removeItem("totalScore"); // Remove the score from local storage
+           
+        }
+    </script>
 </body>
 </html>
+

@@ -127,6 +127,7 @@
     let score = 0;
     let timer; // For interval
     let timeRemaining = 90; // 1 minute 30 seconds in seconds
+    let correctAnswers = { current: false, peak: false }; // Track correct answers
 
     function selectRank(type, rank) {
         selectedRanks[type] = rank;
@@ -144,11 +145,13 @@
         let message = "";
         let pointsAwarded = 0;
 
-        if (selectedRanks.current === correctRanks.current) {
+        if (selectedRanks.current === correctRanks.current && !correctAnswers.current) {
             pointsAwarded += 100;
+            correctAnswers.current = true; // Mark as correct
         }
-        if (selectedRanks.peak === correctRanks.peak) {
+        if (selectedRanks.peak === correctRanks.peak && !correctAnswers.peak) {
             pointsAwarded += 50;
+            correctAnswers.peak = true; // Mark as correct
         }
 
         // Add the awarded points to the score
@@ -169,6 +172,22 @@
             }
         }
         resultElement.textContent = `${message} Attempts left: ${3 - attempts}. Score: ${score}`;
+
+        // Enable the incorrect rank for changes
+        if (!correctAnswers.current) {
+            document.getElementById("currentRankButton").disabled = false; // Allow changing the current rank
+        }
+        if (!correctAnswers.peak) {
+            document.getElementById("peakRankButton").disabled = false; // Allow changing the peak rank
+        }
+
+        // Disable the correct ranks from being changed
+        if (correctAnswers.current) {
+            document.getElementById("currentRankButton").disabled = true; // Disable current rank button if correct
+        }
+        if (correctAnswers.peak) {
+            document.getElementById("peakRankButton").disabled = true; // Disable peak rank button if correct
+        }
     }
 
     function endGame() {
