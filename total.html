@@ -13,25 +13,47 @@
     <title>Total Score</title>
 </head>
 <body>
-    <div class="jumbotron text-center">
-        <h1>Total Score</h1>
-        <p id="totalScoreDisplay">Loading...</p>
-    </div>
-    <div class="btn-group">
-        <a href="index.html" class="btn btn-default" onclick="resetScore()">Restart!</a>
-        <a href="controle.html" class="btn btn-default">Controle</a>
+    <div class="container mt-5 text-center">
+        <div class="jumbotron">
+            <h1>Total Score</h1>
+            <p id="totalScoreDisplay">Loading...</p>
+            <p id="scoreMessage" class="mt-3"></p> <!-- New paragraph for score message -->
+        </div>
+        <div class="btn-group mt-4" role="group">
+            <a href="index.html" class="btn btn-primary" onclick="resetScore()">Restart!</a>
+            <a href="controle.html" class="btn btn-secondary">Controle</a>
+        </div>
     </div>
 
     <script>
-        // Display the total score when the page loads
+        // Display the total score and appropriate message when the page loads
         document.addEventListener("DOMContentLoaded", function () {
-            const totalScore = localStorage.getItem("totalScore") || 0;
+            const totalScore = parseInt(localStorage.getItem("totalScore")) || 0; // Parse as integer
             document.getElementById("totalScoreDisplay").textContent = `Your Total Score: ${totalScore}`;
+            displayScoreMessage(totalScore); // Call function to display message
         });
+
+        // Function to display score message based on the score
+        function displayScoreMessage(score) {
+            const messageElement = document.getElementById("scoreMessage");
+            if (score >= 850) {
+                messageElement.textContent = "Are you cheating?";
+            } else if (score > 750) {
+                messageElement.textContent = "Nice Ace!";
+            } else if (score > 650) {
+                messageElement.textContent = "Great job!";
+            } else if (score > 500) {
+                messageElement.textContent = "Not everyone can aim like TenZ.";
+            } else {
+                messageElement.textContent = "I'm Iron 3.";
+            }
+        }
 
         // Reset score when restarting
         function resetScore() {
             localStorage.removeItem("totalScore");
+            document.getElementById("totalScoreDisplay").textContent = "Your Total Score: 0"; // Update the display immediately
+            document.getElementById("scoreMessage").textContent = ""; // Clear the score message
         }
     </script>
 </body>

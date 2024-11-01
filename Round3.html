@@ -10,7 +10,7 @@
 <body>
 
 <div class="container mt-5">
-    <h2>Round Three Guess!:</h2>
+    <h2>Round Three Guess! :</h2>
 
     <!-- Dropdown Menus in a Row -->
     <div class="d-flex gap-3">
@@ -98,7 +98,6 @@
                     <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 3')">Iron 3</a></li>
                     <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 2')">Iron 2</a></li>
                     <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 1')">Iron 1</a></li>
-                <!-- Add more ranks as needed following the same structure as above -->
             </ul>
         </div>
     </div>
@@ -152,7 +151,9 @@
             pointsAwarded += 50;
         }
 
+        // Add the awarded points to the score
         score += pointsAwarded;
+        addPoints(pointsAwarded); // Call function to add points to localStorage
 
         if (pointsAwarded === 150) {
             message = "Both ranks are correct!";
@@ -190,6 +191,13 @@
                 endGame();
             }
         }, 1000);
+    }
+
+    function addPoints(pointsToAdd) {
+        let totalScore = parseInt(localStorage.getItem("totalScore")) || 0;
+        totalScore += pointsToAdd;
+        localStorage.setItem("totalScore", totalScore);
+        alert(`You earned ${pointsToAdd} points! Total Score: ${totalScore}`);
     }
 
     // Start timer when the page loads
