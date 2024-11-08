@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,225 +8,411 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container mt-5">
-    <h2>Round One Guess! :</h2>
+    <div class="container mt-5">
+        <h2>Round One Guess! :</h2>
 
-    <!-- Dropdown Menus in a Row -->
-    <div class="d-flex gap-3">
-        <!-- Current Rank Dropdown -->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="currentRankButton"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                Current Rank
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="currentRankButton">
-                <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Radiant')">Radiant</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Immortal 3')">Immortal 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Immortal 2')">Immortal 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Immortal 1')">Immortal 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Ascendent 3')">Ascendent 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Ascendent 2')">Ascendent 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Ascendent 1')">Ascendent 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Diamond 3')">Diamond 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Diamond 2')">Diamond 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Diamond 1')">Diamond 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Platnum 3')">Platnum 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Platnum 2')">Platnum 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Platnum 1')">Platnum 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Gold 3')">Gold 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Gold 2')">Gold 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Gold 1')">Gold 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Silver 3')">Silver 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Silver 2')">Silver 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Silver 1')">Silver 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Bronze 3')">Bronze 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Bronze 2')">Bronze 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Bronze 1')">Bronze 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Iron 3')">Iron 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Iron 2')">Iron 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Iron 1')">Iron 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Unranked')">Unranked</a></li>
-                <!-- Add more ranks as needed following the same structure as above -->
-            </ul>
+        <!-- Initial Images (these will show when the page is loaded) -->
+        <div class="d-flex gap-3 mb-3">
+            <img src="Round_1_1.png" style="width: 450px; height: 450px;">
+            <img src="Round_1_2.png" style="width: 900px; height: 450px;">
         </div>
 
-        <!-- Peak Rank Dropdown -->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="peakRankButton"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                Peak Rank
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="peakRankButton">
-                <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Radiant')">Radiant</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Immortal 3')">Immortal 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Immortal 2')">Immortal 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Immortal 1')">Immortal 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Ascendent 3')">Ascendent 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Ascendent 2')">Ascendent 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Ascendent 1')">Ascendent 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Diamond 3')">Diamond 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Diamond 2')">Diamond 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Diamond 1')">Diamond 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Platnum 3')">Platnum 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Platnum 2')">Platnum 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Platnum 1')">Platnum 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Gold 3')">Gold 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Gold 2')">Gold 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Gold 1')">Gold 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Silver 3')">Silver 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Silver 2')">Silver 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Silver 1')">Silver 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Bronze 3')">Bronze 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Bronze 2')">Bronze 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Bronze 1')">Bronze 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 3')">Iron 3</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 2')">Iron 2</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 1')">Iron 1</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Unranked')">Unranked</a></li>
-            </ul>
-        </div>
+        <!-- Dropdown Menus in a Row -->
+
+        <div class="row ">
+            <div class="col-sm-6">
+                <div class="d-flex gap-3 ">
+                    <!-- Current Rank Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="currentRankButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Current Rank
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="currentRankButton">
+                            <!-- Add ranks here... -->
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Radiant')">Radiant</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Immortal 3')">Immortal
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Immortal 2')">Immortal
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Immortal 1')">Immortal
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="selectRank('current', 'Ascendent 3')">Ascendent 3</a></li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="selectRank('current', 'Ascendent 2')">Ascendent 2</a></li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="selectRank('current', 'Ascendent 1')">Ascendent 1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Diamond 3')">Diamond
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Diamond 2')">Diamond
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Diamond 1')">Diamond
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Platnum 3')">Platnum
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Platnum 2')">Platnum
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Platnum 1')">Platnum
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Gold 3')">Gold 3</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Gold 2')">Gold 2</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Gold 1')">Gold 1</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Silver 3')">Silver
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Silver 2')">Silver
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Silver 1')">Silver
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Bronze 3')">Bronze
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Bronze 2')">Bronze
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Bronze 1')">Bronze
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Iron 3')">Iron 3</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Iron 2')">Iron 2</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('current', 'Iron 1')">Iron 1</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="selectRank('current', 'Unranked')">Unranked</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Peak Rank Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="peakRankButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Peak Rank
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="peakRankButton">
+                            <!-- Add ranks here... -->
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Radiant')">Radiant</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Immortal 3')">Immortal
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Immortal 2')">Immortal
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Immortal 1')">Immortal
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Ascendent 3')">Ascendent
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Ascendent 2')">Ascendent
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Ascendent 1')">Ascendent
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Diamond 3')">Diamond
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Diamond 2')">Diamond
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Diamond 1')">Diamond
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Platnum 3')">Platnum
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Platnum 2')">Platnum
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Platnum 1')">Platnum
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Gold 3')">Gold 3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Gold 2')">Gold 2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Gold 1')">Gold 1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Silver 3')">Silver 3</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Silver 2')">Silver 2</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Silver 1')">Silver 1</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Bronze 3')">Bronze 3</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Bronze 2')">Bronze 2</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Bronze 1')">Bronze 1</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 3')">Iron 3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 2')">Iron 2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Iron 1')">Iron 1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('peak', 'Unranked')">Unranked</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Rank During Game Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="gameRankButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Rank During Game
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="gameRankButton">
+                            <!-- Add ranks here... -->
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Radiant')">Radiant</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Immortal 3')">Immortal
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Immortal 2')">Immortal
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Immortal 1')">Immortal
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Ascendent 3')">Ascendent
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Ascendent 2')">Ascendent
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Ascendent 1')">Ascendent
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Diamond 3')">Diamond
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Diamond 2')">Diamond
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Diamond 1')">Diamond
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Platnum 3')">Platnum
+                                    3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Platnum 2')">Platnum
+                                    2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Platnum 1')">Platnum
+                                    1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Gold 3')">Gold 3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Gold 2')">Gold 2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Gold 1')">Gold 1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Silver 3')">Silver 3</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Silver 2')">Silver 2</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Silver 1')">Silver 1</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Bronze 3')">Bronze 3</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Bronze 2')">Bronze 2</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Bronze 1')">Bronze 1</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Iron 3')">Iron 3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Iron 2')">Iron 2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Iron 1')">Iron 1</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" onclick="selectRank('game', 'Unranked')">Unranked</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            
+
+                    <!-- Submit Button -->
+                    <button class="btn btn-primary mt-3" onclick="submitRanks()" id="submitBtn">Submit</button>
+
+                    <!-- Result Display -->
+                    <p id="result" class="mt-3"></p>
+
+                    <!-- Continue Button (initially hidden) -->
+                    <a href="Round2.html" class="btn btn-primary mt-3" id="continueBtn" style="display: none;">Continue!</a>
+            </div>
+            <div class ="col-sm-6 gap-3">
+                <!-- Third Image (hidden initially, displayed when all answers are correct) -->
+                <div class="mt-3 d-flex gap-3 col-sm-2">
+                    <img src="Round_1_3.png" id="rewardImage" alt="Reward Image"
+                    style="width: 300px; height: auto; display: none;">
+                </div>
+
+            </div>
+                    <!-- Timer Display -->
+                    <p id="timer" class="mt-3"></p>
+
+                    
+            
+        </div>                
     </div>
+    </div>
+    <!-- Bootstrap JS (requires Popper.js for dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
 
-    <!-- Submit Button -->
-    <button class="btn btn-primary mt-3" onclick="submitRanks()" id="submitBtn">Submit</button>
+    <script>
+        const correctRanks = { current: "Silver 2", peak: "Silver 2", game: "Silver 2" }; // Set correct answers
+        let selectedRanks = { current: null, peak: null, game: null };
+        let attempts = 0;
+        let score = 0;
+        let timer;
+        let timeRemaining = 90;
+        let correctAnswers = { current: false, peak: false, game: false };
 
-    <!-- Result Display -->
-    <p id="result" class="mt-3"></p>
-
-    <!-- Continue Button (initially hidden) -->
-    <a href="Round2.html" class="btn btn-primary mt-3" id="continueBtn" style="display: none;">Continue!</a>
-
-    <!-- Timer Display -->
-    <p id="timer" class="mt-3"></p>
-
-</div>
-
-<!-- Bootstrap JS (requires Popper.js for dropdowns) -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
-
-<script>
-    const correctRanks = { current: "Radiant", peak: "Immortal 3" }; // Update correct answers
-    let selectedRanks = { current: null, peak: null };
-    let attempts = 0;
-    let score = 0;
-    let timer; // For interval
-    let timeRemaining = 90; // 1 minute 30 seconds in seconds
-    let correctAnswers = { current: false, peak: false }; // Track correct answers
-
-    function selectRank(type, rank) {
-        selectedRanks[type] = rank;
-        document.getElementById(type + "RankButton").textContent = rank;
-    }
-
-    function submitRanks() {
-        if (attempts >= 3 || timeRemaining <= 0) {
-            return;
+        function selectRank(type, rank) {
+            selectedRanks[type] = rank;
+            document.getElementById(type + "RankButton").textContent = rank;
         }
 
-        attempts++;
-        const resultElement = document.getElementById("result");
+        function submitRanks() {
+            if (attempts >= 3 || timeRemaining <= 0) {
+                return;
+            }
 
-        let message = "";
-        let pointsAwarded = 0;
+            attempts++;
+            const resultElement = document.getElementById("result");
 
-        if (selectedRanks.current === correctRanks.current && !correctAnswers.current) {
-            pointsAwarded += 100;
-            correctAnswers.current = true; // Mark as correct
-        }
-        if (selectedRanks.peak === correctRanks.peak && !correctAnswers.peak) {
-            pointsAwarded += 50;
-            correctAnswers.peak = true; // Mark as correct
-        }
+            let message = "";
+            let pointsAwarded = 0;
 
-        // Add the awarded points to the score
-        score += pointsAwarded;
-        addPoints(pointsAwarded); // Call function to add points to localStorage
+            if (selectedRanks.current === correctRanks.current && !correctAnswers.current) {
+                pointsAwarded += 100;
+                correctAnswers.current = true;
+            }
+            if (selectedRanks.peak === correctRanks.peak && !correctAnswers.peak) {
+                pointsAwarded += 50;
+                correctAnswers.peak = true;
+            }
+            if (selectedRanks.game === correctRanks.game && !correctAnswers.game) {
+                pointsAwarded += 50;
+                correctAnswers.game = true;
+            }
 
-        if (pointsAwarded === 150) {
-            message = "Both ranks are correct!";
-            resultElement.style.color = "green";
-            document.getElementById("submitBtn").disabled = true;
-            endGame();
-        } else {
-            message = `One or both ranks are incorrect. Points awarded: ${pointsAwarded}`;
-            resultElement.style.color = "red";
-            if (attempts >= 3) {
+            score += pointsAwarded;
+            addPoints(pointsAwarded);
+
+            if (pointsAwarded === 200) {
+                message = "All ranks are correct!";
+                resultElement.style.color = "green";
                 document.getElementById("submitBtn").disabled = true;
                 endGame();
+            } else {
+                message = `One or more ranks are incorrect. Points awarded: ${pointsAwarded}`;
+                resultElement.style.color = "red";
+                if (attempts >= 3) {
+                    document.getElementById("submitBtn").disabled = true;
+                    endGame();
+                }
             }
+            resultElement.textContent = `${message} Attempts left: ${3 - attempts}. Score: ${score}`;
+
+            // Enable or disable buttons based on correct answers
+            if (!correctAnswers.current) document.getElementById("currentRankButton").disabled = false;
+            if (!correctAnswers.peak) document.getElementById("peakRankButton").disabled = false;
+            if (!correctAnswers.game) document.getElementById("gameRankButton").disabled = false;
+
+            if (correctAnswers.current) document.getElementById("currentRankButton").disabled = true;
+            if (correctAnswers.peak) document.getElementById("peakRankButton").disabled = true;
+            if (correctAnswers.game) document.getElementById("gameRankButton").disabled = true;
         }
-        resultElement.textContent = `${message} Attempts left: ${3 - attempts}. Score: ${score}`;
 
-        // Enable the incorrect rank for changes
-        if (!correctAnswers.current) {
-            document.getElementById("currentRankButton").disabled = false; // Allow changing the current rank
-        }
-        if (!correctAnswers.peak) {
-            document.getElementById("peakRankButton").disabled = false; // Allow changing the peak rank
+        function endGame() {
+            clearInterval(timer);
+            document.getElementById("continueBtn").style.display = "inline-block";
+            document.getElementById("rewardImage").style.display = "inline"; // Show reward image
         }
 
-        // Disable the correct ranks from being changed
-        if (correctAnswers.current) {
-            document.getElementById("currentRankButton").disabled = true; // Disable current rank button if correct
+        function startTimer() {
+            timer = setInterval(() => {
+                timeRemaining--;
+
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                document.getElementById("timer").textContent = `Time left: ${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timer);
+                    document.getElementById("result").textContent = "Time's up!";
+                    document.getElementById("submitBtn").disabled = true;
+                    endGame();
+                }
+            }, 1000);
         }
-        if (correctAnswers.peak) {
-            document.getElementById("peakRankButton").disabled = true; // Disable peak rank button if correct
+
+        function addPoints(pointsToAdd) {
+            let totalScore = parseInt(localStorage.getItem("totalScore")) || 0;
+            totalScore += pointsToAdd;
+            localStorage.setItem("totalScore", totalScore);
+            alert(`You earned ${pointsToAdd} points! Total Score: ${totalScore}`);
         }
-    }
 
-    function endGame() {
-        clearInterval(timer);
-        document.getElementById("continueBtn").style.display = "inline-block";
-    }
-
-    function startTimer() {
-        timer = setInterval(() => {
-            timeRemaining--;
-
-            const minutes = Math.floor(timeRemaining / 60);
-            const seconds = timeRemaining % 60;
-            document.getElementById("timer").textContent = `Time left: ${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
-
-            if (timeRemaining <= 0) {
-                clearInterval(timer);
-                document.getElementById("result").textContent = "Time's up!";
-                document.getElementById("submitBtn").disabled = true;
-                endGame();
-            }
-        }, 1000);
-    }
-
-    function addPoints(pointsToAdd) {
-        let totalScore = parseInt(localStorage.getItem("totalScore")) || 0;
-        totalScore += pointsToAdd;
-        localStorage.setItem("totalScore", totalScore);
-        alert(`You earned ${pointsToAdd} points! Total Score: ${totalScore}`);
-    }
-
-    // Start timer when the page loads
-    window.onload = startTimer;
-</script>
+        window.onload = startTimer;
+    </script>
 
 </body>
+
 </html>
